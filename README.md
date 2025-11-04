@@ -1,5 +1,30 @@
 # mql-zmq
 
+### Changes in this fork
+Fixed build error for latest MT5.
+
+# Build libzmq in windows
+- clone zmq
+- cd libzmq 
+- mkdir build && cd build
+- cmake .. -G "Visual Studio 17 2022" -A x64 -DBUILD_SHARED=ON -DENABLE_DRAFTS=OFF -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTS=OFF -DWITH_LIBSODIUM=ON
+- cmake --build . --config Release
+- cp bin/Release/libzmq-v143-mt-4_3_6.dll ...../MQL5/Libraries/libzmq.dll
+
+# libsodium
+ - get it from release page - https://github.com/jedisct1/libsodium/releases -> libsodium-1.0.20-msvc.zip -> libsodium.dll
+
+# For wine:
+ - see below
+
+# Similar Things
+ - https://github.com/darwinex/DarwinexLabs
+ - https://github.com/darwinex/dwx-zeromq-connector
+ - https://github.com/darwinex/dwxconnect/
+ 
+
+
+##### ORIGINAL README
 ZMQ binding for the MQL language (both 32bit MT4 and 64bit MT5)
 
 * [1. Introduction](#introduction)
