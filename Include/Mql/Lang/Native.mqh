@@ -72,9 +72,9 @@ int MultiByteToWideChar(uint   codePage,
 //| Need to import RtlMoveMemory with appropriate parameter type T   |
 //+------------------------------------------------------------------+
 template<typename T>
-void ArrayFromPointer(T &array[],intptr_t src,int count=WHOLE_ARRAY)
+void ArrayFromPointer(T &array[],intptr_t src,long count=WHOLE_ARRAY)
   {
-   int size=(count==WHOLE_ARRAY)?ArraySize(array):count;
+   long size=(count==WHOLE_ARRAY)?ArraySize(array):count;
    RtlMoveMemory(array,src,(size_t)(size*sizeof(T)));
   }
 //+------------------------------------------------------------------+

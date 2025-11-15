@@ -118,7 +118,7 @@ void ZmqMsg::getData(uchar &bytes[])
    size_t size=size();
    intptr_t src=data();
    if(ArraySize(bytes)<size) ArrayResize(bytes,(int)size);
-   ArrayFromPointer(bytes,src);
+   ArrayFromPointer(bytes,src, size);
   }
 //+------------------------------------------------------------------+
 //| Get message data as utf-8 string                                 |
